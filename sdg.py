@@ -1,3 +1,19 @@
+
+
+import subprocess
+import sys
+
+def install_libraries():
+    try:
+        print("Installing required libraries...")
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'torch', 'torchvision', 'numpy', 'Pillow', 'scikit-learn', 'streamlit'])
+        print("Libraries installed successfully!")
+    except subprocess.CalledProcessError as e:
+        print(f"Error occurred while installing libraries: {e}")
+
+
+
+
 import streamlit as st
 import torch
 import torchvision.transforms as transforms
